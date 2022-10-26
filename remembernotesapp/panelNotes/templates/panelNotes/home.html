@@ -1,0 +1,35 @@
+{% extends 'panelNotes/base.html' %} 
+{% block content %} 
+    {% if note_list.exists %} 
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Fecha limite</th>
+                        <th scope="col">Fecha de publicacion</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    {% for note in note_list %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ note.title }}</td>
+                                <td>{{ note.done_date }}</td>
+                                <td>{{ note.pub_date }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="#" class="btn btn-outline-primary">Detalle</a>
+                                        <a href="#" class="btn btn-outline-primary">Editar</a>
+                                        <a href="{% url 'panelNotes:deletenotes' note.id %}" class="btn btn-outline-primary">Borrar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                    {% endfor %}
+                <tbody>
+        </table>
+    {% else %}
+        <h2>No existen notas</h2>
+    {% endif %}
+{% endblock content %}

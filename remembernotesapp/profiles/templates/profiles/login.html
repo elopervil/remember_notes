@@ -1,0 +1,10 @@
+{% extends './base.html' %} {% block content %}
+<form action="" method="post">
+  {% csrf_token %} {{form}}
+  <input type="submit" value="Login" />
+</form>
+<p>
+  ¿No estas registrado? Registrate pulsando
+  <a href="{% url 'profiles:register' %}">AQUI</a>
+</p>
+{% endblock %}

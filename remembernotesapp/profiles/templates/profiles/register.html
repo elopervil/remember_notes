@@ -1,0 +1,7 @@
+{% extends './base.html' %} {% block content %}
+<form action="" method="post">
+  {% csrf_token %} {{form}}
+  <input type="submit" value="Regístrate" />
+</form>
+<p>Si ya tienes usuario pulsa <a href="{% url 'profiles:login' %}">AQUI</a></p>
+{% endblock %}

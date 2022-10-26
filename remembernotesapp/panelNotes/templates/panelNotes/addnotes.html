@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container p-5">
+    <form method="post" class="mb-3 border border-4 rounded-2 p-3">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+            {{form.title|as_crispy_field}}
+        </div>
+
+        <div class="row mb-3">
+            {{form.description|as_crispy_field}}
+        </div>
+
+        <div class="row mb-3">
+            {{form.done_date|as_crispy_field}}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar nota</button>
+
+    </form>
+
+    <a class="btn btn-primary" href="{% url 'panelNotes:home' %}" role="button">Atras</a>
+
+</div>
+
+{% endblock content %}
+
+
