@@ -1,7 +1,10 @@
-{% extends './base.html' %} {% block content %}
+{% extends './base.html' %} 
+{% load crispy_forms_tags %}
+{% block content %}
 <form action="" method="post">
-  {% csrf_token %} {{form}}
-  <input type="submit" value="Regístrate" />
+  {% csrf_token %} 
+  {{ form|crispy }}
+  <input type="submit" value="Regístrate" class="btn btn-primary" />
 </form>
-<p>Si ya tienes usuario pulsa <a href="{% url 'profiles:login' %}">AQUI</a></p>
+<p class="m-5">Si ya estas registrado pulsa <a href="{% url 'profiles:login' %}" class="btn btn-dark btn-sm">AQUI</a></p>
 {% endblock %}

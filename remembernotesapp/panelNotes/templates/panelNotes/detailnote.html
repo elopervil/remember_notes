@@ -1,0 +1,29 @@
+{% extends 'panelNotes/base.html' %} 
+{% block content %}
+
+<div class="card text-center w-100 shadow-lg bg-body rounded">
+  <div class="card-header">
+    Detalle
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Titulo</h5>
+    <p class="card-text">{{ note.title }}</p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Descripcion</h5>
+    <p class="card-text">{{ note.description }}</p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Fecha Limite</h5>
+    <p class="card-text">{{ note.done_date }}</p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Fecha Publicacion</h5>
+    <p class="card-text">{{ note.pub_date }}</p>
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto mb-3">
+    <a class="btn btn-primary" href="{% url 'panelNotes:home' %}" role="button">Atras</a>
+  </div>
+</div>
+
+{% endblock  %}
