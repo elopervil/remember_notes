@@ -4,7 +4,7 @@ from api_notas.views import NotesAPIView, NotesViewset
 
 
 router = routers.SimpleRouter()
-router.register(r'notes', NotesViewset)
+router.register(r'notes', NotesViewset, basename='notes')
 urlpatterns = [
     path('notas/', NotesAPIView.as_view(), name='notas_api')
 ]
