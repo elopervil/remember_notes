@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'panelNotes.apps.PanelnotesConfig',
     'profiles.apps.ProfilesConfig',
     'crispy_forms',
-    'api_notas.apps',
     'rest_framework',
     'rest_framework.authtoken'
 ]

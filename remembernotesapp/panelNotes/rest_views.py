@@ -10,7 +10,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.status import (HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_200_OK)
 
 
-from api_notas.serializers import NotesSerializer
+from panelNotes.serializers import NotesSerializer
 from panelNotes.models import Notes
 
 
@@ -41,6 +41,3 @@ def get_token_api (request):
     token, created = Token.objects.get_or_create(user=user)
 
     return Response({'token': token.key}, status=HTTP_200_OK)
-    
-
-    
