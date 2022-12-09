@@ -2,8 +2,8 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container text-center  p-5">
-    <h1 class="display-6">Añadir notas</h1>
+<div class="container text-center  p-3">
+    <h1 class="display-6">Editar nota</h1>
     <form method="post" class="mb-3 border border-4 rounded-2 p-3">
         {% csrf_token %}
         <div class="row mb-3">
@@ -17,14 +17,12 @@
         <div class="row mb-3">
             {{form.done_date|as_crispy_field}}
         </div>
-        <button type="submit" class="btn btn-primary">Guardar nota</button>
+        <button type="submit" class="btn btn-primary">Editar nota</button>
 
     </form>
 
-    <a class="btn btn-primary" href="{% url 'panelNotes:home' %}" role="button">Atras</a>
+    <a class="btn btn-primary" href="{% url 'notes:home' %}" role="button">Atras</a>
 
 </div>
 
 {% endblock content %}
-
-

@@ -10,8 +10,8 @@ from rest_framework.authtoken.models import Token
 from rest_framework.status import (HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_200_OK)
 
 
-from panelNotes.serializers import NotesSerializer
-from panelNotes.models import Notes
+from notes.serializers import NotesSerializer
+from notes.models import Notes
 
 
 class NotesViewset(viewsets.ModelViewSet):

@@ -1,4 +1,4 @@
-{% extends 'panelNotes/base.html' %} 
+{% extends 'notes/base.html' %} 
 {% block content %} 
     {% if note_list.exists %} 
         <table class="table table-striped shadow-lg bg-body rounded">
@@ -20,9 +20,9 @@
                                 <td>{{ note.pub_date }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{% url 'panelNotes:detailnotes' note.id %}" class="btn btn-outline-primary">Detalle</a>
-                                        <a href="{% url 'panelNotes:editnotes' note.id %}" class="btn btn-outline-primary">Editar</a>
-                                        <a href="{% url 'panelNotes:deletenotes' note.id %}" class="btn btn-outline-primary">Borrar</a>
+                                        <a href="{% url 'notes:detailnotes' note.id %}" class="btn btn-outline-primary">Detalle</a>
+                                        <a href="{% url 'notes:editnotes' note.id %}" class="btn btn-outline-primary">Editar</a>
+                                        <a href="{% url 'notes:deletenotes' note.id %}" class="btn btn-outline-primary">Borrar</a>
                                     </div>
                                 </td>
                             </tr>

@@ -21,7 +21,7 @@ class RegisterView (View):
         if (form.is_valid()):
             user = form.save()
             login(request, user)
-            return redirect('panelNotes:home')
+            return redirect('notes:home')
 
         else:
             for msg in form.error_messages:
@@ -46,7 +46,7 @@ def login_view(request):
             user = authenticate(username=usernam, password=passw)
             if user is not None:
                 login(request, user)
-                return redirect('panelNotes:home')
+                return redirect('notes:home')
             else:
                 messages.error(request, "Usuario no valido")
         else:

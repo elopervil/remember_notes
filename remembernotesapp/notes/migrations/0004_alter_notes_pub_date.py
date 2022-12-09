@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('panelNotes', '0003_notes_is_done_notes_owner_user'),
+        ('notes', '0003_notes_is_done_notes_owner_user'),
     ]
 
     operations = [

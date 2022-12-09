@@ -1,4 +1,4 @@
-{% extends 'panelNotes/base.html' %} 
+{% extends 'notes/base.html' %} 
 {% block content %}
 
 <div class="card text-center w-100 shadow-lg bg-body rounded">
@@ -22,7 +22,7 @@
     <p class="card-text">{{ note.pub_date }}</p>
   </div>
   <div class="d-grid gap-2 col-6 mx-auto mb-3">
-    <a class="btn btn-primary" href="{% url 'panelNotes:home' %}" role="button">Atras</a>
+    <a class="btn btn-primary" href="{% url 'notes:home' %}" role="button">Atras</a>
   </div>
 </div>
 

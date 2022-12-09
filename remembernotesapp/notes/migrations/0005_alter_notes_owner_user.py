@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('panelNotes', '0004_alter_notes_pub_date'),
+        ('notes', '0004_alter_notes_pub_date'),
     ]
 
     operations = [

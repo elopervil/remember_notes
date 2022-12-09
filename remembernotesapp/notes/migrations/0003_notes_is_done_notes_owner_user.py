@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('panelNotes', '0002_remove_notes_is_done_remove_notes_owner_user'),
+        ('notes', '0002_remove_notes_is_done_remove_notes_owner_user'),
     ]
 
     operations = [

@@ -11,7 +11,7 @@ def home_view(request):
     user_id = request.user.id
     if user_id is not None:
         notes = Notes.objects.filter(owner_user=user_id).order_by('done_date')
-        return render(request, 'panelNotes/home.html', {
+        return render(request, 'notes/home.html', {
             "note_list": notes
         })
     else:
@@ -38,24 +38,24 @@ def add_notes(request):
                 owner_user=owner_user
             )
             reg_note.save()
-            return redirect('panelNotes:home')
+            return redirect('notes:home')
     else:
         form = AddNotesForm()
 
-    return render(request, "panelNotes/addnotes.html", {'form': form})
+    return render(request, "notes/addnotes.html", {'form': form})
 
 
 @login_required(login_url='profiles:login')
 def delete_notes(request, note_id):
     note = Notes.objects.get(pk=note_id)
     note.delete()
-    return redirect('panelNotes:home')
+    return redirect('notes:home')
 
 
 @login_required(login_url='profiles:login')
 def detail_notes(request, note_id):
     note = Notes.objects.get(pk=note_id)
-    return render(request, 'panelNotes/detailnote.html', {
+    return render(request, 'notes/detailnote.html', {
         'note': note
     })
 
@@ -73,7 +73,7 @@ def edit_notes(request, note_id):
                 description=description,
                 done_date=done_date
             )
-            return redirect('panelNotes:home')
+            return redirect('notes:home')
     else:
         note = Notes.objects.get(pk=note_id)
         form = AddNotesForm(initial={
@@ -82,4 +82,4 @@ def edit_notes(request, note_id):
             'done_date': note.done_date.strftime('%Y-%m-%d')
         })
 
-    return render(request, "panelNotes/editnotes.html", {'form': form})
+    return render(request, "notes/editnotes.html", {'form': form})

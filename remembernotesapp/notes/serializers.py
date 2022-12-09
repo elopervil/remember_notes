@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from panelNotes.models import Notes
+from notes.models import Notes
 
 
 class NotesSerializer(serializers.ModelSerializer):
